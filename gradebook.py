@@ -22,6 +22,8 @@ def average(scores):
         raise TypeError("scores must be a list")
     if len(scores) == 0:
         raise ValueError("length of scores can not be empty")
+    if not all(isinstance(s, (int, float)) for s in scores):
+        raise TypeError("invaild data types in list. All scors must be numbers")
     return round(sum(scores)/len(scores),2)
     
 def curve_score(score, bonus):
