@@ -18,6 +18,8 @@ def is_passing(score):
     return score >= 60
 
 def average(scores):
+    if len(scores) == 0:
+        raise ValueError("length os scores can not be empty")
     return round(sum(scores)/len(scores),2)
     
 def curve_score(score, bonus):
