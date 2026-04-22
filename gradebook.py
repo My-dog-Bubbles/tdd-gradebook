@@ -27,5 +27,7 @@ def average(scores):
     return round(sum(scores)/len(scores),2)
     
 def curve_score(score, bonus):
+    if bounus < 0:
+        raise ValueError("bonus cannot be neagtive")
     return min(score+bonus, 100)
 
